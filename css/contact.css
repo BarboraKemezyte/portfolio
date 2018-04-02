@@ -1,0 +1,120 @@
+.contact-page-wrapper{
+  height: 100vh;
+  width: 100%;
+  display: none;
+  position: relative;
+  background-color: white;
+}
+
+.contact-page-wrapper .contact-container {
+  padding-top: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.contact-page-wrapper .contact-container p{
+  display: none;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s
+}
+
+.contact-page-wrapper .contact-container .form-container{
+  width: 40%;
+  padding-top: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  display: none
+}
+.contact-page-wrapper .contact-container .form-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+
+}
+
+.contact-page-wrapper .contact-container .form-container form label{
+  margin-bottom: 10px;
+  margin-top: 25px;
+  font-size: 13px;
+}
+.contact-page-wrapper .contact-container .form-container form input{
+  border: none;
+  border-bottom: 1px solid black;
+  font-family: "Open sans";
+
+}
+
+.contact-page-wrapper .contact-container .form-container form textarea{
+  margin-bottom: 20px;
+  border: none;
+  height: 200px;
+  border-bottom: 1px solid black;
+  font-family: "Open sans";
+}
+
+.contact-page-wrapper .contact-container .form-container form button{
+  background-color: black;
+  color: white;
+  border: none;
+  height: 30px;
+}
+
+
+/* //iphone 4 + 4s 320px - 480px */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
+  .contact-page-wrapper .contact-container{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 150px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .contact-page-wrapper .contact-container .form-container{
+    width: 95%;
+    padding-bottom: 50px;
+  }
+
+  .contact-page-wrapper .nav-portfolio{
+     padding-top: 20px;
+     padding-left: 30px;
+     padding-right: 30px;
+   }
+
+   .contact-page-wrapper .nav-portfolio .nav-logo img{
+     width: 15%;
+   }
+
+  .contact-page-wrapper .contact-container .form-container form textarea{
+    height: 100px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+  .contact-page-wrapper .contact-container p{
+    padding-left: 90px;
+    padding-right: 90px;
+    text-align: center;
+
+  }
+  .contact-page-wrapper .contact-container .form-container{
+    width: 70%;
+  }
+}

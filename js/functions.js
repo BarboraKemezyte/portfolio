@@ -1,0 +1,266 @@
+var currentHash;
+var nextHash; //next page user wants to visit
+var animationEnd;
+
+var elements = [];
+var midElementsIn = [];
+var btmElementsIn = [];
+
+var topElementsOut = [];
+var midElementsOut = [];
+var btmElementsOut = [];
+
+$(document).ready(function() {
+
+  currentHash = "loadingpage";
+  location.hash = currentHash;
+
+  //detect end of animation
+  animationEnd = (function(el) {
+    var animations = {
+      animation: 'animationend',
+      OAnimation: 'oAnimationEnd',
+      MozAnimation: 'mozAnimationEnd',
+      WebkitAnimation: 'webkitAnimationEnd',
+    };
+
+    for (var t in animations) {
+      if (el.style[t] !== undefined) {
+        return animations[t];
+      }
+    }
+  })(document.createElement('div'));
+  //$(this).addClass("animated fadeOutUp").one (animationEnd, function(){
+
+
+
+});
+
+$(window).on('load', function() {
+  //on load
+  console.log("loaded");
+  //load all images
+
+  //on bg-video + images load change hash location to landing page
+  location.hash = "landingpage";
+
+  $('a[id]').click(function(e) {
+    nextHash = this.id;
+    window.location.hash = nextHash;
+  });
+});
+
+//triggered on every hash change
+function hashChange() {
+
+  nextHash = location.hash; //set the new hash location as nextHash
+
+  //do stuffs
+  switch (nextHash) {
+    case "#about":
+      animate(currentHash, nextHash);
+      break;
+    case "#portfolio":
+      animate(currentHash, nextHash);
+
+      break;
+    case "#landingpage":
+      animate(currentHash, nextHash);
+      break;
+    case "#contact":
+      animate(currentHash, nextHash);
+      break;
+  }
+  currentHash = location.hash; //after animating - set the new hash as current one
+}
+
+
+//animates out currentHash and animates in nextHash on animation finish
+function animate(currentHash, nextHash) {
+
+  currentHash = currentHash.slice(1); //remove #
+  nextHash = nextHash.slice(1); //remove #
+
+  //getElements(currentHash);***
+
+  $('.' +currentHash+'').fadeOut(300, function(){
+    $('.'+nextHash+'').fadeIn(300, function(){
+      console.log("nextHash: ", nextHash);
+      if(nextHash === "landingpage"){
+        //animation in
+        $('.landing-container video').addClass("animated fadeIn").css({"display":"block"});
+        $('.hero-container').addClass("animated fadeInLeft").css({"display":"flex"});
+        for (i =0; i<=3; i++){
+          $('.titles-container .titles p:nth-child('+i+')').addClass("animated fadeInRight").css({"display":"block"});
+         }
+        $('.procceed').addClass("animated fadeInUp").css({"display":"block"});
+      } // end of landing page
+
+      if(nextHash === "portfolio"){
+          //animation in
+          $('.nav-portfolio').addClass("animated fadeInDown").css({"display":"flex"});
+          $('.portfolio-container').addClass("animated fadeInUp").css({"display":"flex"});
+
+
+        }//end of portfolio
+
+      if (nextHash === "about"){
+        $('.nav-about a').addClass("animated fadeInDown").css({"display":"block"});
+
+      }//end of about
+
+      if (nextHash ==="contact"){
+        $('.contact-container p').addClass("animated fadeInDown").css({"display": "flex"});
+        $('.contact-container .form-container').addClass("animated fadeIn").css({"display":"block"});
+      }
+
+    });
+  });
+
+}
+
+function playAnimation(elements){
+
+  for (e in elements){
+    $(''+elements[e]+'').addClass("animated fadeOutUp").one(animationEnd, function(){
+      console.log("removing class: " + elements[e]);
+      $(''+elements[e]+'').removeClass("animated fadeOutUp");
+    });
+  }
+
+}
+
+//get elements depending on currentHash to animate in or out.
+function getElements(hash) {
+
+  //currentHash - animate out
+  if (hash === "loadingpage") {
+    // topElementsOut = [];
+    // midElementsOut = ["#loading-container"];
+    // btmElementsOut = [];
+    elements = ["#loading-container img", "#loading-container p"];
+  } else if (hash === "landingpage") {
+    // topElementsOut = [];
+    // midElementsOut = [
+    //   "#hero-container",
+    //   "#titles"
+    // ];
+    // btmElementsOut = ["#procceed"];
+    elements = ["#hero-container", "#titles", "#procceed"];
+  } else if (hash === "portfolio") {
+    // topElementsOut = [
+    //   ".nav-logo-portfolio",
+    //   ".nav-links-portfolio"
+    // ];
+    // midElementsOut = [
+    //   ".portfolio-hero",
+    //   ".fashion-photos",
+    //   ".makeup-photos",
+    //   ".stylist-photos"
+    // ];
+    // btmElementsOut = [];
+    elements = [".nav-logo-portfolio", ".nav-links-portfolio", ".portfolio-hero", ".photos"];
+
+  } else if (hash === "about") {
+    // topElementsOut = ["#portfolio"];
+    // midElementsOut = [
+    //   ".about-text"
+    // ]
+    // btmElementsOut = [
+    //   "#made-by"
+    // ]
+    elements = [".nav-about", ".about-text h3", ".about-text p", ".about-text h6"];
+
+  } else if (hash === "contact") {
+    //   topElementsOut = [
+    //     ".nav-logo",
+    //     ".nav-links"
+    //   ];
+    //   midElementsOut = [];
+    //   btmElementsOut = [];
+    elements = [".nav-logo", ".nav-links", ".contact-container"];
+  }
+}
+
+//takes a list of elements and the direction, either fadein or fadeOut
+function loadingPageAnimation(elements, direction) {
+  if (direction === "prev") {
+    elements[0].addClass("animated fadeOutUp").one(animationEnd, function() {
+      elements[1].addClass("animated fadeOutDown");
+    });
+
+    //remove classes
+  } else {
+    elements[0].addClass("animated fadeInTop").one(animationEnd, function() {
+      elements[1].addClass("animated fadeInDown");
+    });
+    //remove classes
+  }
+}
+
+function landingPageAnimation(elements, direction) {
+  if (direction === "prev") {
+    elements[0].addClass("animated fadeOutUp").one(animationEnd, function() {
+      elements[1].addClass("animated fadeOutDown").one(animationEnd, function() {
+        elements[2].addClass("animated fadeOutDown");
+      });
+    });
+  } else {
+    elements[0].addClass("animated fadeInUp").one(animationEnd, function() {
+      elements[1].addClass("animated fadeInDown").one(animationEnd, function() {
+        elements[2].addClass("animated fadeInDown");
+      });
+    });
+  }
+}
+
+function portfolioPageAnimation(elements, direction) {
+  if (direction === "prev") {
+    elements[0].addClass("animated fadeOutUp").one(animationEnd, function() {
+      elements[1].addClass("animated fadeOutUp").one(animationEnd, function() {
+        elements[2].addClass("animated fadeOut").one(animationEnd, function() {
+          elements[3].addClass("animated fadeOut");
+        });
+      });
+    });
+  } else {
+    elements[0].addClass("animated fadeInUp").one(animationEnd, function() {
+      elements[1].addClass("animated fadeInUp").one(animationEnd, function() {
+        elements[2].addClass("animated fadeIn").one(animationEnd, function() {
+          elements[3].addClass("animated fadeIn");
+        });
+      });
+    });
+  }
+}
+
+function aboutPageAnimation(elements, direction) {
+  if (direction === "prev") {
+    elements[0].addClass("animated fadeOutUp").one(animationEnd, function() {
+      elements[1].addClass("animated fadeOut").one(animationEnd, function() {
+        elements[2].addClass("animated fadeOut").one(animationEnd, function() {
+          elements[3].addClass("animated fadeOutDown");
+        });
+      });
+    });
+  } else {
+    elements[0].addClass("animated fadeInUp").one(animationEnd, function() {
+      elements[1].addClass("animated fadeIn").one(animationEnd, function() {
+        elements[2].addClass("animated fadeIn").one(animationEnd, function() {
+          elements[3].addClass("animated fadeInDown");
+        });
+      });
+    });
+
+  }
+}
+
+function contactPageAnimation(elements, direction){
+  if(direction ==="prev"){
+    elements[0].addClass("animated fadeOutUp").one(animationEnd, function(){
+      elements[1].addClass("animated fadeOutUp").one(animationEnd, function(){
+        elements[2].addClass("animated fadeOut");
+      });
+    });
+  }
+}
