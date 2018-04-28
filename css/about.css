@@ -39,6 +39,8 @@ body .about {
 }
 .about .about-wrapper .about-text-wrapper p{
   font-size: 16px;
+  font-family: "Open Sans";
+  line-height: 18px;
 }
 
 .about .about-wrapper .about-text-wrapper h3{

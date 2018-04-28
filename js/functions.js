@@ -116,20 +116,7 @@ function animate(currentHash, nextHash) {
 
     });
   });
-
 }
-
-function playAnimation(elements){
-
-  for (e in elements){
-    $(''+elements[e]+'').addClass("animated fadeOutUp").one(animationEnd, function(){
-      console.log("removing class: " + elements[e]);
-      $(''+elements[e]+'').removeClass("animated fadeOutUp");
-    });
-  }
-
-}
-
 //get elements depending on currentHash to animate in or out.
 function getElements(hash) {
 
@@ -179,88 +166,5 @@ function getElements(hash) {
     //   midElementsOut = [];
     //   btmElementsOut = [];
     elements = [".nav-logo", ".nav-links", ".contact-container"];
-  }
-}
-
-//takes a list of elements and the direction, either fadein or fadeOut
-function loadingPageAnimation(elements, direction) {
-  if (direction === "prev") {
-    elements[0].addClass("animated fadeOutUp").one(animationEnd, function() {
-      elements[1].addClass("animated fadeOutDown");
-    });
-
-    //remove classes
-  } else {
-    elements[0].addClass("animated fadeInTop").one(animationEnd, function() {
-      elements[1].addClass("animated fadeInDown");
-    });
-    //remove classes
-  }
-}
-
-function landingPageAnimation(elements, direction) {
-  if (direction === "prev") {
-    elements[0].addClass("animated fadeOutUp").one(animationEnd, function() {
-      elements[1].addClass("animated fadeOutDown").one(animationEnd, function() {
-        elements[2].addClass("animated fadeOutDown");
-      });
-    });
-  } else {
-    elements[0].addClass("animated fadeInUp").one(animationEnd, function() {
-      elements[1].addClass("animated fadeInDown").one(animationEnd, function() {
-        elements[2].addClass("animated fadeInDown");
-      });
-    });
-  }
-}
-
-function portfolioPageAnimation(elements, direction) {
-  if (direction === "prev") {
-    elements[0].addClass("animated fadeOutUp").one(animationEnd, function() {
-      elements[1].addClass("animated fadeOutUp").one(animationEnd, function() {
-        elements[2].addClass("animated fadeOut").one(animationEnd, function() {
-          elements[3].addClass("animated fadeOut");
-        });
-      });
-    });
-  } else {
-    elements[0].addClass("animated fadeInUp").one(animationEnd, function() {
-      elements[1].addClass("animated fadeInUp").one(animationEnd, function() {
-        elements[2].addClass("animated fadeIn").one(animationEnd, function() {
-          elements[3].addClass("animated fadeIn");
-        });
-      });
-    });
-  }
-}
-
-function aboutPageAnimation(elements, direction) {
-  if (direction === "prev") {
-    elements[0].addClass("animated fadeOutUp").one(animationEnd, function() {
-      elements[1].addClass("animated fadeOut").one(animationEnd, function() {
-        elements[2].addClass("animated fadeOut").one(animationEnd, function() {
-          elements[3].addClass("animated fadeOutDown");
-        });
-      });
-    });
-  } else {
-    elements[0].addClass("animated fadeInUp").one(animationEnd, function() {
-      elements[1].addClass("animated fadeIn").one(animationEnd, function() {
-        elements[2].addClass("animated fadeIn").one(animationEnd, function() {
-          elements[3].addClass("animated fadeInDown");
-        });
-      });
-    });
-
-  }
-}
-
-function contactPageAnimation(elements, direction){
-  if(direction ==="prev"){
-    elements[0].addClass("animated fadeOutUp").one(animationEnd, function(){
-      elements[1].addClass("animated fadeOutUp").one(animationEnd, function(){
-        elements[2].addClass("animated fadeOut");
-      });
-    });
   }
 }
