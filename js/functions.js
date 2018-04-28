@@ -39,10 +39,12 @@ $(document).ready(function() {
 $(window).on('load', function() {
   //on load
   console.log("loaded");
-  //load all images
-
+  $('.loading-text').addClass("animated fadeIn").css({"display":"block"});
   //on bg-video + images load change hash location to landing page
-  location.hash = "landingpage";
+  setTimeout(function() {
+    location.hash = "landingpage";
+}, 2500);
+
 
   $('a[id]').click(function(e) {
     nextHash = this.id;
