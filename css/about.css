@@ -26,7 +26,7 @@ body .about {
 
 .about .about-wrapper .img-container{
   flex: 1;
-  background-image: url('./img/content/portrait.jpg');
+  background-image: url('./img/newmaterial/portrait-about-me.JPG');
   background-size: cover;
   background-position: center;
 }
