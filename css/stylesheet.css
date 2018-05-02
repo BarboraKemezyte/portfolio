@@ -75,6 +75,7 @@ body .nav-portfolio {
   padding: 200px 125px 80px 125px;
   box-sizing: border-box;
   animation-duration: 1.3s;
+  font-size: 21px;
 }
 
 .portfolio .portfolio-container .section1{
