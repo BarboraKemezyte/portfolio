@@ -115,6 +115,9 @@ body .nav-portfolio {
   text-align: center;
 
 }
+.photo img{
+  transition: transform .4s ease-in-out;
+}
 
 .photo img:hover{
   transform: scale(1.1);
