@@ -89,26 +89,23 @@ function animate(currentHash, nextHash) {
     $('.'+nextHash+'').fadeIn(300, function(){
       console.log("nextHash: ", nextHash);
       if(nextHash === "landingpage"){
-        //animation in
-        $('.landing-container video').addClass("animated fadeIn").css({"display":"block"});
-        $('.hero-container').addClass("animated fadeInLeft").css({"display":"flex"});
-        for (i =0; i<=3; i++){
-          $('.titles-container .titles p:nth-child('+i+')').addClass("animated fadeInRight").css({"display":"block"});
-         }
-        $('.procceed').addClass("animated fadeInUp").css({"display":"block"});
+
+        $('.nav-landing-page').addClass("animated fadeInDown").css({"display":"block"});
+        $('.landingpage .main-container').addClass("animated fadeIn").css({"display":"flex"});
       } // end of landing page
 
       if(nextHash === "portfolio"){
           //animation in
           $('.nav-portfolio').addClass("animated fadeInDown").css({"display":"flex"});
-          $('.portfolio-container').addClass("animated fadeInUp").css({"display":"flex"});
+          $('.portfolio-container').addClass("animated fadeInUp").css({"display":"block"});
 
 
         }//end of portfolio
 
       if (nextHash === "about"){
-        $('.nav-about a').addClass("animated fadeInDown").css({"display":"block"});
-
+        $('.nav-portfolio').addClass("animated fadeInDown").css({"display": "flex"});
+        $('.about-text-wrapper').addClass("animated fadeIn").css({"display":"flex"});
+        $('.img-container').addClass("animated fadeIn").css({"display":"block"});
       }//end of about
 
       if (nextHash ==="contact"){

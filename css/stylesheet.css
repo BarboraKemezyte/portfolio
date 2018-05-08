@@ -15,6 +15,9 @@ body {
   position: relative;
   font-family: "open sans";
 }
+p{
+  margin: 2px;
+}
 ::-webkit-scrollbar {
   width: 1px;
   height: 1px;
@@ -71,286 +74,139 @@ body .nav-portfolio {
   width: 100%;
   font-family: "Cormorant Garamond";
   display: none;
-  flex-direction: column;
   padding: 200px 125px 80px 125px;
   box-sizing: border-box;
   animation-duration: 1.3s;
 }
-
-.portfolio .portfolio-container .section1{
-  display: flex;
-  width: 75%;
-  margin-bottom: 180px;
-  align-self: center;
+.info {
+  margin-top: 80px;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.info p span{
+  font-style: italic;
+  font-size: 15px;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+.info p a {
+  text-decoration: none;
+  color: black;
 }
 
-.portfolio .portfolio-container .section1 .header-photo-container{
-  width: 50%;
-}
-.header-photo-container img{
-  max-width: 100%;
-
-}
-.portfolio .portfolio-container .section1 .header-text-container{
-  width: 60%;
-  padding: 80px 100px 0px 100px;
-  box-sizing: border-box;
-}
-
-.section2 {
-  height: 400px;
+.section{
   width: 100%;
-  margin-bottom: 180px;
+  margin-bottom: 150px;
 }
-.section2 .example-container{
+.container{
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-.section2 .example-container img{
-  height: 400px;
-  width: auto;
+  transition: all .2s ease-in-out;
 }
 
-.section3{
-  margin-bottom: 180px;
-  width: 100%;
-  height: 700px;
+.container .row{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  height: auto;
+  width: 100%;
+  margin-bottom: 120px;
+}
+.photo{
   text-align: center;
+
 }
 
-.section3 .makeup-container{
-  width: 50%;
-  position: relative;
+.photo img:hover{
+  transform: scale(1.1);
 }
-
-.section3 .makeup-container img{
-  height: 620px;
-  width: auto;
-  position: absolute;
-  right: 0;
-}
-
-.section3 .makeup-container p{
-  position: absolute;
-  width: 40%;
-  left: 0;
-  top: 10%;
-}
-
-.section4{
-  margin-bottom: 180px;
+.full-photo{
   width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
-.section4 .fashion-container{
-  width: 90%;
-  height: auto;
-  margin-bottom: 80px;
-}
-.section4 .fashion-container img{
-  width: 100%;
+
+/* .section1 .container .row-1{
+  margin-bottom: 120px
+} */
+.section1 .container .row-1 img{
+  max-width: 80%;
   height: auto;
 }
-.section4 .fashion-container .fashion-examples-container{
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-}
-.section4 .fashion-examples-container .example-container{
-  margin-bottom: 50px;
-  display: flex;
-  justify-content: center;
-}
-.section4 .fashion-examples-container .example-container .example-text{
-  width: 30%;
-}
-.section4   .fashion-examples-container .example-container .example-img{
-  width: 30%;
-}
-.section4 .fashion-examples-container .example-container .example-img img{
-  max-width: 100%;
+
+.section2 .container .row .photo img{
+  max-width: 90%;
+  height: auto;
 }
 
-.section5 {
-  margin-bottom: 180px;
-  width: 100%;
-}
-.section5 .look-container{
-  display: flex;
-  justify-content: center;
-}
-.section5 .look-container img{
-  height: 700px;
-  width: auto;
+.section3 .container .row {
+  justify-content: flex-start;
 }
 
-.section6 {
-  margin-bottom: 180px;
-  width: 100%;
-  display: flex;
-}
-.section6 .look-examples-container{
-  display: flex;
-  flex: 2;
-  justify-content: center;
-  height: 600px;
+.section .container .row .info{
+  margin-left: 100px;
 }
 
-.section6 .look-examples-text{
-  flex: 2;
-}
-.section6 .look-examples-container .example1{
-  height: 500px;
-  margin-right: 20px;
-}
-.section6 .look-examples-container .example2{
-  height: 500px;
-  align-self: flex-end;
-
-}
-.section6 .look-examples-container .example1 img{
-  max-height: 100%;
-}
-.section6 .look-examples-container .example2 img{
-  max-height: 80%;
+.section3 .container .row:nth-child(2) .photo img{
+  max-width: 90%;
+  height: auto;
 }
 
-.section6 .look-examples-text .example-text{
-  padding: 80px 50px 0px 50px;
-  box-sizing: border-box;
+.section3 .container .row:nth-child(3) .photo img{
+  max-width: 90%;
+  height: auto;
 }
-
-
+.section3 .container .row:nth-child(4) .photo img{
+  max-width: 80%;
+  height: auto;
+}
 
 /* //iphone 4 + 4s 320px - 480px */
-@media only screen and (min-device-width: 320px) and (max-device-width: 1024px){
+ @media only screen and (min-device-width: 320px) and (max-device-width: 1024px){
 
-  .portfolio .portfolio-container{
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 150px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.portfolio .portfolio-container .section1 {
-  width: 100%;
-  display: block;
-  margin-bottom: 100px;
-}
-.portfolio .portfolio-container .section1 .header-photo-container{
-  width: 100%;
-  text-align: center;
-}
-
-.portfolio .portfolio-container .section1 .header-text-container{
-  padding: 0;
-  width: 100%;
-}
-
-.portfolio .portfolio-container .section2{
-  height: auto;
-}
-.portfolio .portfolio-container .section2 .example-container{
-  display: block;
-  text-align: center;
-}
-
-.portfolio .portfolio-container .section3{
-  display: block;
-  height: auto;
-  margin-bottom: 100px;
-}
-.portfolio .portfolio-container .section3 .makeup-container{
-  width: 100%;
-}
-.portfolio .portfolio-container .section3 .makeup-container img{
-  height: 400px;
-  position: static;
-}
-.portfolio .portfolio-container .section3 .makeup-container p{
-  position: static;
-  width: 100%;
-}
-
-.section4 .fashion-container{
-  width: 100%;
-}
-
-.section4 .fashion-examples-container .example-container {
-  display: block;
-}
-.section4 .fashion-examples-container .example-container .example-text{
-  width: 100%;
-}
-.section4 .fashion-examples-container .example-container .example-img{
-  width: 100%;
-}
-
-.section5 .look-container img{
-  height: 400px;
-}
-
-.section6 {
-  display: block;
-  margin-bottom: 50px;
-}
-.section6 .look-examples-container{
-  display: block;
-  height: auto;
-  text-align: center;
-}
-.section6 .look-examples-container .example1{
-  margin-right: 0;
-  height: 400px;
-  margin-bottom: 20px;
-}
-.section6 .look-examples-container .example2{
-  height: 400px;
-}
-.section6 .look-examples-container .example2 img{
-  max-height: 100%;
-}
-
-.section6 .look-examples-text .example-text{
-  padding: 0;
-}
-
-
-.portfolio .nav-portfolio{
+.nav-portfolio {
+  display: flex;
   padding-top: 20px;
   padding-left: 30px;
   padding-right: 30px;
 }
-.portfolio .nav-portfolio .nav-logo img{
+.nav-portfolio .nav-logo{
   width: 15%;
 }
-
-.portfolio .nav-portfolio .nav-links{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.nav-portfolio .nav-logo img {
+    width: 50%;
 }
 
+   .portfolio .portfolio-container {
+       height: auto;
+       width: 100%;
+       font-family: "Cormorant Garamond";
+       display: none;
+       padding: 200px 20px 80px 20px;
+       box-sizing: border-box;
+       animation-duration: 1.3s;
+ }
+
+ .container .row{
+   display: block;
+ }
 
 
-
+.section .container .row .info {
+  margin-left: 0px;
+  text-align: center;
+  margin-top: 0;
+}
+.section1 .container .row-1 img {
+  max-width: 90%;
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
-  .portfolio .nav-portfolio .nav-logo img{
-    width: 10%;
-  }
-  .portfolio .nav-portfolio{
-    padding-right: 80px;
-    padding-left: 80px;
-    padding-top: 50px;
-  }
+.section1 .container .row-2 img{
+  max-width: 90%;
 }
+.section3 .container .row img{
+  max-width: 90%;
+}
+
+.section3 .container .row:nth-child(4) .photo img{
+  max-width: 90%;
+}
+/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){ */
+
+/* } */
