@@ -75,8 +75,10 @@ body .nav-portfolio {
   font-family: "Cormorant Garamond";
   display: none;
   padding: 200px 125px 80px 125px;
-  box-sizing: border-box;
-  animation-duration: 1.3s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-animation-duration: 1.3s;
+          animation-duration: 1.3s;
   font-size: 21px;
 }
 .info {
@@ -101,12 +103,18 @@ body .nav-portfolio {
 }
 .container{
   width: 100%;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
 
 .container .row{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: auto;
   width: 100%;
   margin-bottom: 120px;
@@ -116,11 +124,17 @@ body .nav-portfolio {
 
 }
 .photo img{
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  transition: -webkit-transform .4s ease-in-out;
+  -o-transition: transform .4s ease-in-out;
   transition: transform .4s ease-in-out;
+  transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
 }
 
 .photo img:hover{
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .full-photo{
   width: 100%;
@@ -140,7 +154,9 @@ body .nav-portfolio {
 }
 
 .section3 .container .row {
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .section .container .row .info{
@@ -165,6 +181,8 @@ body .nav-portfolio {
  @media only screen and (min-device-width: 320px) and (max-device-width: 1024px){
 
 .nav-portfolio {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding-top: 20px;
   padding-left: 30px;
@@ -183,8 +201,10 @@ body .nav-portfolio {
        font-family: "Cormorant Garamond";
        display: none;
        padding: 200px 20px 80px 20px;
-       box-sizing: border-box;
-       animation-duration: 1.3s;
+       -webkit-box-sizing: border-box;
+               box-sizing: border-box;
+       -webkit-animation-duration: 1.3s;
+               animation-duration: 1.3s;
  }
 
  .container .row{
@@ -211,6 +231,4 @@ body .nav-portfolio {
 .section3 .container .row:nth-child(4) .photo img{
   max-width: 90%;
 }
-/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){ */
-
-/* } */
+}
