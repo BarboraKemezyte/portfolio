@@ -55,9 +55,10 @@ body .about {
 
 .about .about-wrapper .about-text-wrapper p span{
   font-style: italic;
+  text-decoration: underline;
 }
 .about .about-wrapper .about-text-wrapper a{
-  text-decoration: none;
+  text-decoration: underline;
   color: black;
 }
 

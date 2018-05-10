@@ -44,7 +44,7 @@ body .nav-portfolio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: fixed;
+  position: absolute;
   width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -93,7 +93,7 @@ body .nav-portfolio {
   letter-spacing: 1px;
 }
 .info p a {
-  text-decoration: none;
+  text-decoration: underline;
   color: black;
 }
 
